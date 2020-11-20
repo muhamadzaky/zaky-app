@@ -29,16 +29,16 @@ export const Contact = () => {
     {
       icon: <MailOutlined />,
       tooltip: "Email me",
-      link: "mailto:muhamadzaky2310@gmail.com"
+      link: "mailto:muhamadzaky2310@gmail.com?cc=zakysteinfeld@outlook.com&subject=Hi! I'm interested with you.&body="
     },
   ]
   return (
-    <Row justify="space-around" style={{ width: '100%', padding: '30px 20% 10px', marginTop: 50, background: 'white' }}>
+    <Row justify="space-around" style={{ width: '100%', padding: '30px 20% 10px', marginTop: 50, background: 'white', boxShadow: '0px 5px 15px rgba(50, 50, 50, 0.75)' }}>
       <Col>
         <Row justify="space-around">
           <Title>
-            Contact
-            <Divider style={{ margin: 0, marginTop: '5px', borderTop: '1px solid blue' }} />
+            Reach Me On
+            <Divider style={{ margin: 0, marginTop: '5px', borderTop: '1px solid #1890ff' }} />
           </Title>
         </Row>
         <Row>
@@ -48,7 +48,7 @@ export const Contact = () => {
             renderItem={item => (
               <Item>
                 <Tooltip title={item.tooltip} placement="bottom">
-                  <Button icon={item.icon} href={item.link} target="_blank" shape="circle" />
+                  <Button className="btn-sns" icon={item.icon} href={item.link} target="_blank" shape="circle" size="large" />
                 </Tooltip>
               </Item>
             )}

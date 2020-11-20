@@ -1,7 +1,8 @@
 import { Card, Row, Steps, Typography } from 'antd'
 import React from 'react'
 
-export const Section2 = () => {
+export const Section2 = (opt) => {
+  const { data } = opt
   const { Title } = Typography
   const { Step } = Steps
   return (
@@ -16,11 +17,18 @@ export const Section2 = () => {
         style={{ width: '100%' }}
       >
         <Row justify="space-around">
-          <Steps direction="vertical" current={1} progressDot>
-            <Step title="Finished" description="This is a description." />
-            <Step title="In Progress" description="This is a description." />
-            <Step title="Waiting" description="This is a description." />
-          </Steps>
+          {
+            data ?
+            <Steps direction="vertical" current={data ? data.length : 0} progressDot >
+              {
+                data.map((item, i) => {
+                  return (
+                    <Step key={i} status="finish" title={item.title} subTitle={item.subTitle} description={item.description} />
+                    )
+                  })
+              }
+            </Steps> : "No data."
+          }
         </Row>
       </Card>
     </Row>

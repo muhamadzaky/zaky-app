@@ -1,24 +1,28 @@
-import { Col, Divider, Row, Timeline, Typography } from 'antd'
 import React from 'react'
+import { Col, Divider, Row, Timeline, Typography } from 'antd'
+import moment from 'moment'
 
-export const Section4 = () => {
+export const Section4 = (opt) => {
   const { Title } = Typography
   const { Item } = Timeline
   return (
-    <Row justify="space-around" style={{ width: '100%', marginTop: '50px' }}>
-      <Col>
+    <Row justify="space-around" style={{ width: '100%', marginTop: '100px' }}>
+      <Col style={{ width: '100%' }}>
         <Row justify="space-around">
           <Title>
             Experiences
-            <Divider style={{ margin: 0, marginTop: '5px', borderTop: '1px solid blue' }} />
+            <Divider style={{ margin: 0, marginTop: '5px', borderTop: '1px solid #1890ff' }} />
           </Title>
         </Row>
-        <Row justify="space-around">
-          <Timeline>
-            <Item>Create a services site 2015-09-01</Item>
-            <Item>Solve initial network problems 2015-09-01</Item>
-            <Item>Technical testing 2015-09-01</Item>
-            <Item>Network problems being solved 2015-09-01</Item>
+        <Row justify="space-around" style={{ marginTop: 20 }}>
+          <Timeline mode="right" style={{ width: '100%' }}>
+            {
+              opt.data.map((item, idx) => {
+                return (
+                  <Item key={ idx } label={`${ item.position } - ${ item.company }`}>{`${moment(item.start).format("ll")} - ${moment(item.end).format("ll")}`}</Item>
+                )
+              })
+            }
           </Timeline>
         </Row>
       </Col>
