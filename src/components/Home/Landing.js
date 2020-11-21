@@ -6,6 +6,7 @@ import { Section2 } from './Section2'
 import { Section3 } from './Section3'
 import { Section4 } from './Section4'
 import { Section5 } from './Section5'
+import { OtherApp } from './OtherApp'
 import { Contact } from './Contact'
 import { api } from '../../common/service/api'
 import Animate from 'rc-animate'
@@ -22,6 +23,7 @@ class Landing extends Component {
     skill: [],
     experience: [],
     project: [],
+    otherapp: [],
     projectModalData: {},
     projectModalVisibility: false
   }
@@ -36,6 +38,7 @@ class Landing extends Component {
         skill: res.data.skill,
         experience: res.data.experience,
         project: res.data.project,
+        otherapp: res.data.otherApp,
         isLoading: false,
         dataLoaded: true
       })
@@ -102,7 +105,7 @@ class Landing extends Component {
   }
   
   render() {
-    const { education, skill, experience, project, isLoading, dataLoaded } = this.state
+    const { education, skill, experience, project, otherapp, isLoading, dataLoaded } = this.state
     const { isMobile, logo } = this.props
     const { Title, Text } = Typography
     if (isLoading) {
@@ -162,6 +165,9 @@ class Landing extends Component {
                   <Section3 data={skill} isMobile={isMobile} />
                   <Section4 data={experience} isMobile={isMobile} />
                   <Section5 data={project} openModal={this.openModal} closeModal={this.closeModal} isMobile={isMobile} />
+                  {
+                    otherapp.show ? <OtherApp data={otherapp} isMobile={isMobile} /> : null
+                  }
                 </Row>
                 <Contact />
               </>
