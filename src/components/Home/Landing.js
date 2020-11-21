@@ -111,7 +111,7 @@ class Landing extends Component {
           transitionName="fade"
           transitionAppear
         >
-          <Row key="1" justify="space-around" align="middle" style={{ height: '83vh' }}>
+          <Row key="1" justify="space-around" align="middle" style={{ height: '92vh' }}>
             <Col>
               <Row>
                 <img src={logoReact} className="App-logo" alt="logo" />
