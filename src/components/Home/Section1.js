@@ -4,7 +4,7 @@ import { Col, Divider, Row, Typography } from 'antd'
 export const Section1 = () => {
   const { Title, Paragraph } = Typography
   return (
-    <Row justify="space-around" style={{ width: '100%', marginTop: '20px' }}>
+    <Row justify="space-around" style={{ width: '100%', marginTop: '100px', marginBottom: '50px' }}>
       <Col>
         <Row justify="space-around">
           <Title>

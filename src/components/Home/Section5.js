@@ -13,7 +13,7 @@ export const Section5 = (opt) => {
             <Divider style={{ margin: 0, marginTop: '5px', borderTop: '1px solid #1890ff' }} />
           </Title>
         </Row>
-        <Row>
+        <Row className={ opt.isMobile ? "list-project" : "" }>
           <List
             grid={{ gutter: 16, column: opt.isMobile ? 1 : 3 }}
             dataSource={opt.data}
@@ -21,7 +21,7 @@ export const Section5 = (opt) => {
               <Item>
                 <Card 
                   title={<Tooltip title={ item.company }>{ item.company }</Tooltip>}
-                  style={{ width: opt.isMobile ? '81.5%' : '350px' }}
+                  style={{ width: opt.isMobile ? '100%' : '350px' }}
                   extra={<Button type="primary" shape="round" size="small" onClick={ () => opt.openModal(item) }>More</Button>}
                 >
                   <Row>

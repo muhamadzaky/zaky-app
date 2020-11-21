@@ -8,6 +8,7 @@ import { Section4 } from './Section4'
 import { Section5 } from './Section5'
 import { Contact } from './Contact'
 import { api } from '../../common/service/api'
+import logoReact from '../../assets/image/logo.svg'
 import Banner from '../../assets/image/banner-1.jpg'
 import moment from 'moment'
 
@@ -102,11 +103,18 @@ class Landing extends Component {
   render() {
     const { education, skill, experience, project, isLoading, dataLoaded } = this.state
     const { isMobile } = this.props
-    const { Title } = Typography
+    const { Title, Text } = Typography
     if (isLoading) {
       return (
-        <Row>
-          Loading ...
+        <Row justify="space-around" align="middle" style={{ height: '83vh' }}>
+          <Col>
+            <Row>
+              <img src={logoReact} className="App-logo" alt="logo" />
+            </Row>
+            <Row justify="space-around" align="middle">
+              <Text style={{ color: '#61dafb', fontSize: 24 }} strong>Loading ...</Text>
+            </Row>
+          </Col>
         </Row>
       )
     } else {
