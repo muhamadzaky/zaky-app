@@ -103,7 +103,7 @@ class Landing extends Component {
   
   render() {
     const { education, skill, experience, project, isLoading, dataLoaded } = this.state
-    const { isMobile } = this.props
+    const { isMobile, logo } = this.props
     const { Title, Text } = Typography
     if (isLoading) {
       return (
@@ -130,6 +130,7 @@ class Landing extends Component {
           transitionAppear
         >
           <Row key="2">
+            <img className="logo" src={logo} alt="logo" />
             <img className="banner-img" src={Banner} alt="banner" />
             <Row className={ isMobile ? "banner-text-mobile" : "banner-text" }>
               <Col>
@@ -140,7 +141,7 @@ class Landing extends Component {
                 <Row>
                   <p className="position">Frontend & Backend Developer</p>
                 </Row>
-                <Row style={{ marginTop: 10 }}>
+                <Row style={ isMobile ? { marginTop: 30, background: 'white', padding: '10px 10px', borderTopLeftRadius: 35, borderBottomLeftRadius: 35 } : { marginTop: 10 }}>
                   <Space className="btn-banner" size="large">
                     <Button className="btn-pink" shape="round" icon={<MailOutlined />} href="mailto:muhamadzaky2310@gmail.com?cc=zakysteinfeld@outlook.com&subject=Hi! I'm interested with you.&body=" target="_blank" size="large">
                       Mail me!

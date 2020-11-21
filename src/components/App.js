@@ -31,11 +31,11 @@ class App extends Component {
     const { Header, Footer, Content } = Layout
     return (
       <Layout>
-        <Header className="header-custom" style={ isMobile ? { display: 'flex', justifyContent: 'space-around' } : {} }>
+        {/* <Header className="header-custom" style={ isMobile ? { display: 'flex', justifyContent: 'space-around' } : {} }>
           <img className="logo" src={logo} alt="logo" />
-        </Header>
+        </Header> */}
         <Content>
-          <Landing isMobile={isMobile} />
+          <Landing isMobile={isMobile} logo={logo} />
         </Content>
         <Footer style={{ background: 'white', textAlign: isMobile ? 'center' : 'left' }}>
           &copy;{ moment(new Date()).format('YYYY') } - Developed with <HeartFilled /> by Muhamad Zaky
