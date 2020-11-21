@@ -129,7 +129,7 @@
   color: #1b1b1b;
 }
 
-.ant-btn.btn-green:hover {
+.ant-btn.btn-green:hover, .ant-btn.btn-green:focus, .ant-btn.btn-green:active {
   background-color: #69f0ae;
   border-color: #69f0ae;
   color: #1b1b1b;
@@ -141,7 +141,7 @@
   color: #f0f2f5;
 }
 
-.ant-btn.btn-pink:hover {
+.ant-btn.btn-pink:hover, .ant-btn.btn-pink:focus, .ant-btn.btn-pink:active {
   background-color: #e76798;
   border-color: #e76798;
   color: #f0f2f5;

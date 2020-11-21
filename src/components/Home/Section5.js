@@ -23,6 +23,8 @@ export const Section5 = (opt) => {
                   title={<Tooltip title={ item.company }>{ item.company }</Tooltip>}
                   style={{ width: opt.isMobile ? '100%' : '350px' }}
                   extra={<Button type="primary" shape="round" size="small" onClick={ () => opt.openModal(item) }>More</Button>}
+                  hoverable
+                  bordered={false}
                 >
                   <Row>
                     <Col>

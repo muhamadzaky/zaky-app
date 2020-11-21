@@ -8,6 +8,7 @@ import { Section4 } from './Section4'
 import { Section5 } from './Section5'
 import { Contact } from './Contact'
 import { api } from '../../common/service/api'
+import Animate from 'rc-animate'
 import logoReact from '../../assets/image/logo.svg'
 import Banner from '../../assets/image/banner-1.jpg'
 import moment from 'moment'
@@ -106,63 +107,73 @@ class Landing extends Component {
     const { Title, Text } = Typography
     if (isLoading) {
       return (
-        <Row justify="space-around" align="middle" style={{ height: '83vh' }}>
-          <Col>
-            <Row>
-              <img src={logoReact} className="App-logo" alt="logo" />
-            </Row>
-            <Row justify="space-around" align="middle">
-              <Text style={{ color: '#61dafb', fontSize: 24 }} strong>Loading ...</Text>
-            </Row>
-          </Col>
-        </Row>
-      )
-    } else {
-      return (
-        <Row>
-          <img className="banner-img" src={Banner} alt="banner" />
-          <Row className={ isMobile ? "banner-text-mobile" : "banner-text" }>
+        <Animate
+          transitionName="fade"
+          transitionAppear
+        >
+          <Row key="1" justify="space-around" align="middle" style={{ height: '83vh' }}>
             <Col>
               <Row>
-                <p className="hello">Hi!</p>&nbsp;
-                <p className="name">I'm Zaky.</p>
+                <img src={logoReact} className="App-logo" alt="logo" />
               </Row>
-              <Row>
-                <p className="position">Frontend & Backend Developer</p>
-              </Row>
-              <Row style={{ marginTop: 10 }}>
-                <Space className="btn-banner" size="large">
-                  <Button className="btn-pink" shape="round" icon={<MailOutlined />} href="mailto:muhamadzaky2310@gmail.com?cc=zakysteinfeld@outlook.com&subject=Hi! I'm interested with you.&body=" target="_blank" size="large">
-                    Mail me!
-                  </Button>
-                  <Button className="btn-green" shape="round" icon={<DownloadOutlined />} href="https://drive.google.com/drive/folders/1IQ0Vc28mkXClsFYPOrKhhfCP6rPn7o2-?usp=sharing" target="_blank" size="large">
-                    Download CV
-                  </Button>
-                </Space>
+              <Row justify="space-around" align="middle">
+                <Text style={{ color: '#61dafb', fontSize: 24 }} strong>Loading ...</Text>
               </Row>
             </Col>
           </Row>
-          {
-            dataLoaded ?
-            <>
-              <Row style={{ margin: `0 ${ isMobile ? '3%' : '20%'}`, width: isMobile ? '94%' : '100%' }}>
-                <Section1 />
-                <Section2 data={education} />
-                <Section3 data={skill} isMobile={isMobile} />
-                <Section4 data={experience} isMobile={isMobile} />
-                <Section5 data={project} openModal={this.openModal} closeModal={this.closeModal} isMobile={isMobile} />
-              </Row>
-              <Contact />
-            </>
-            :
-            <Row style={{ margin: `0 ${ isMobile ? '3%' : '20%'}`, width: isMobile ? '94%' : '100%' }}>
-              <Title>Data not loaded correctly.</Title>
-              <Title level={2}>Page will be reloaded after 5 seconds.</Title>
-              <Title level={2}>If page doesn't automatically reloaded. Click <Button type="link" onClick={() => window.location.reload()}>here</Button>.</Title>
+        </Animate>
+      )
+    } else {
+      return (
+        <Animate
+          transitionName="fade"
+          transitionAppear
+        >
+          <Row key="2">
+            <img className="banner-img" src={Banner} alt="banner" />
+            <Row className={ isMobile ? "banner-text-mobile" : "banner-text" }>
+              <Col>
+                <Row>
+                  <p className="hello">Hi!</p>&nbsp;
+                  <p className="name">I'm Zaky.</p>
+                </Row>
+                <Row>
+                  <p className="position">Frontend & Backend Developer</p>
+                </Row>
+                <Row style={{ marginTop: 10 }}>
+                  <Space className="btn-banner" size="large">
+                    <Button className="btn-pink" shape="round" icon={<MailOutlined />} href="mailto:muhamadzaky2310@gmail.com?cc=zakysteinfeld@outlook.com&subject=Hi! I'm interested with you.&body=" target="_blank" size="large">
+                      Mail me!
+                    </Button>
+                    <Button className="btn-green" shape="round" icon={<DownloadOutlined />} href="https://drive.google.com/drive/folders/1IQ0Vc28mkXClsFYPOrKhhfCP6rPn7o2-?usp=sharing" target="_blank" size="large">
+                      Download CV
+                    </Button>
+                  </Space>
+                </Row>
+              </Col>
             </Row>
-          }
-          { this.renderModalProject() }
-        </Row>
+            {
+              dataLoaded ?
+              <>
+                <Row style={{ margin: `0 ${ isMobile ? '3%' : '20%'}`, width: isMobile ? '94%' : '100%' }}>
+                  <Section1 />
+                  <Section2 data={education} />
+                  <Section3 data={skill} isMobile={isMobile} />
+                  <Section4 data={experience} isMobile={isMobile} />
+                  <Section5 data={project} openModal={this.openModal} closeModal={this.closeModal} isMobile={isMobile} />
+                </Row>
+                <Contact />
+              </>
+              :
+              <Row style={{ margin: `0 ${ isMobile ? '3%' : '20%'}`, width: isMobile ? '94%' : '100%' }}>
+                <Title>Data not loaded correctly.</Title>
+                <Title level={2}>Page will be reloaded after 5 seconds.</Title>
+                <Title level={2}>If page doesn't automatically reloaded. Click <Button type="link" onClick={() => window.location.reload()}>here</Button>.</Title>
+              </Row>
+            }
+            { this.renderModalProject() }
+          </Row>
+        </Animate>
       )
     }
   }

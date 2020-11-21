@@ -12,6 +12,7 @@ const renderList = (opt) => {
           <Card 
             title={item.title}
             extra={<Avatar src={ item.logo } />}
+            bordered={false}
           >
             { `${item.progress}%` }
           </Card>
