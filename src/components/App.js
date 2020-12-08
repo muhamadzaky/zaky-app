@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
-import { Layout, Row } from 'antd'
+import { Layout } from 'antd'
 import { HeartFilled } from '@ant-design/icons'
 import { enquireScreen } from 'enquire-js'
+import { Redirect, Route, Router } from 'react-router-dom'
+import { uriByENV } from '../common/general-function'
 import moment from 'moment'
+import history from '../common/history'
 import Landing from './Home/Landing'
 import logo from '../assets/image/logo.png'
 import '../assets/scss/App.scss'
@@ -16,26 +19,28 @@ enquireScreen((b) => {
 
 class App extends Component {
   state = {
-    isMobile
+    isMobile,
+    env: 1
   }
 
   componentDidMount() {
     enquireScreen((b) => {
-      this.setState({
-        isMobile: !!b
-      })
+      this.setState({ isMobile: !!b })
     })
   }
 
   render() {
-    const { Header, Footer, Content } = Layout
+    const { Footer, Content } = Layout
+    const { env } = this.state
     return (
       <Layout>
         {/* <Header className="header-custom" style={ isMobile ? { display: 'flex', justifyContent: 'space-around' } : {} }>
           <img className="logo" src={logo} alt="logo" />
         </Header> */}
         <Content>
-          <Landing isMobile={isMobile} logo={logo} />
+          <Router history={history}>
+            <Route exact path={uriByENV(env)} render={props => <Landing {...props} isMobile={isMobile} logo={logo} />} />
+          </Router>
         </Content>
         <Footer style={{ background: 'white', textAlign: isMobile ? 'center' : 'left' }}>
           &copy;{ moment(new Date()).format('YYYY') } - Developed with <HeartFilled /> by Muhamad Zaky
