@@ -3,7 +3,6 @@ import { Button, Col, Divider, Radio, Row, Typography } from 'antd'
 
 export const OtherApp = (opt) => {
   const { Title } = Typography
-  console.log(opt)
   return (
     <Row justify="space-around" style={{ width: '100%', marginTop: '100px' }}>
       <Col>
