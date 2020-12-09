@@ -25,7 +25,7 @@ const renderList = (opt) => {
 export const Section3 = (opt) => {
   const { Title } = Typography
   return (
-    <Row justify="space-around" style={{ width: '100%', marginTop: '100px' }}>
+    <Row className="Skill-Section" justify="space-around" style={{ width: '100%', marginTop: '100px' }}>
       { 
         opt.isMobile ? 
         <>

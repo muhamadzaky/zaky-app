@@ -6,7 +6,7 @@ export const Section2 = (opt) => {
   const { Title } = Typography
   const { Step } = Steps
   return (
-    <Row justify="space-around" style={{ width: '100%', marginTop: '50px' }}>
+    <Row className="Education-Section" justify="space-around" style={{ width: '100%', marginTop: '50px' }}>
       <Card  
         title={
           <Title>

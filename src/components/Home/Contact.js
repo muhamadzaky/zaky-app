@@ -33,7 +33,7 @@ export const Contact = () => {
     }
   ]
   return (
-    <Row justify="space-around" style={{ width: '100%', padding: '30px 20% 10px', marginTop: 50, background: 'white' }}>
+    <Row className="Contact-Section" justify="space-around" style={{ width: '100%', padding: '30px 20% 10px', marginTop: 50, background: 'white' }}>
       <Col>
         <Row justify="space-around">
           <Title>

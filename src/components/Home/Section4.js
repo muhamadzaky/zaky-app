@@ -6,7 +6,7 @@ export const Section4 = (opt) => {
   const { Title } = Typography
   const { Item } = Timeline
   return (
-    <Row justify="space-around" style={{ width: '100%', marginTop: '100px' }}>
+    <Row className="Experiences-Section" justify="space-around" style={{ width: '100%', marginTop: '100px' }}>
       <Col style={{ width: '100%' }}>
         <Row justify="space-around">
           <Title>

@@ -5,7 +5,7 @@ export const Section5 = (opt) => {
   const { Title, Text } = Typography
   const { Item } = List
   return (
-    <Row justify="space-around" style={{ width: '100%', marginTop: '100px' }}>
+    <Row className="Projects-Section" justify="space-around" style={{ width: '100%', marginTop: '100px' }}>
       <Col>
         <Row justify="space-around">
           <Title>

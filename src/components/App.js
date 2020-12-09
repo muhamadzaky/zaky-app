@@ -43,7 +43,7 @@ class App extends Component {
           </Router>
         </Content>
         <Footer style={{ background: 'white', textAlign: isMobile ? 'center' : 'left' }}>
-          &copy;{ moment(new Date()).format('YYYY') } - Developed with <HeartFilled /> by Muhamad Zaky
+          &copy;{ moment(new Date()).format('YYYY') } - Developed with <HeartFilled style={{ color: '#ea4c89' }} /> by Muhamad Zaky
         </Footer>
       </Layout>
     )

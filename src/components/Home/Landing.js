@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Col, message, Modal, Row, Space, Typography } from 'antd'
+import { BackTop, Button, Col, message, Modal, Row, Space, Typography } from 'antd'
 import { DownloadOutlined, MailOutlined } from '@ant-design/icons'
 import { Section1 } from './Section1'
 import { Section2 } from './Section2'
@@ -13,6 +13,7 @@ import Animate from 'rc-animate'
 import logoReact from '../../assets/image/logo.svg'
 import Banner from '../../assets/image/banner-1.jpg'
 import moment from 'moment'
+import { Link } from 'react-scroll'
 
 class Landing extends Component {
   state = {
@@ -142,6 +143,14 @@ class Landing extends Component {
         >
           <Row key="2">
             <img className="logo" src={logo} alt="logo" />
+            <Row className="list-menu" style={ isMobile ? { display: 'none' } : {} }>
+              <Text><Link to="About-Section" spy={true} smooth={true} duration={500} offset={-50}>About</Link></Text>
+              <Text><Link to="Education-Section" spy={true} smooth={true} duration={500} offset={-50}>Education</Link></Text>
+              <Text><Link to="Skill-Section" spy={true} smooth={true} duration={500} offset={-50}>Skill</Link></Text>
+              <Text><Link to="Experiences-Section" spy={true} smooth={true} duration={500} offset={-50}>Experiences</Link></Text>
+              <Text><Link to="Projects-Section" spy={true} smooth={true} duration={500} offset={-50}>Projects</Link></Text>
+              <Text><Link to="Contact-Section" spy={true} smooth={true} duration={500} offset={-50}>Contact</Link></Text>
+            </Row>
             <img className="banner-img" src={Banner} alt="banner" />
             <Row className={ isMobile ? "banner-text-mobile" : "banner-text" }>
               <Col>
@@ -187,6 +196,7 @@ class Landing extends Component {
               </Row>
             }
             { this.renderModalProject() }
+            <BackTop />
           </Row>
         </Animate>
       )
