@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Col, Divider, List, Row, Tooltip, Typography } from 'antd'
 import { InstagramOutlined, FacebookOutlined, TwitterOutlined, MailOutlined } from '@ant-design/icons'
 
-export const Contact = () => {
+export const Contact = (opt) => {
   const { Title } = Typography
   const { Item } = List
   const data = [
@@ -32,11 +32,12 @@ export const Contact = () => {
       link: "mailto:muhamadzaky2310@gmail.com?cc=zakysteinfeld@outlook.com&subject=Hi! I'm interested with you.&body="
     }
   ]
+  
   return (
     <Row className="Contact-Section" justify="space-around" style={{ width: '100%', padding: '30px 20% 10px', marginTop: 50, background: 'white' }}>
       <Col>
         <Row justify="space-around">
-          <Title>
+          <Title style={ opt.isMobile ? { fontSize: 36 } : {} }>
             Reach Me On
             <Divider style={{ margin: 0, marginTop: '5px', borderTop: '1px solid #1890ff' }} />
           </Title>

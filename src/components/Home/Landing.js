@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { BackTop, Button, Col, message, Modal, Row, Space, Typography } from 'antd'
-import { DownloadOutlined, MailOutlined } from '@ant-design/icons'
+import { BackTop, Button, Col, message, Modal, Popover, Row, Space, Typography } from 'antd'
+import { DownloadOutlined, MailOutlined, MenuOutlined } from '@ant-design/icons'
 import { Link } from 'react-scroll'
 import { Section1 } from './Section1'
 import { Section2 } from './Section2'
@@ -27,6 +27,7 @@ class Landing extends Component {
     otherapp: [],
     projectModalData: {},
     projectModalVisibility: false,
+    menuMobileVisible: false,
     listMenu: [
       {
         key: "About-Section",
@@ -84,6 +85,10 @@ class Landing extends Component {
     this.setState({ projectModalVisibility: !this.state.projectModalVisibility })
   }
 
+  menuMobileVisibility = () => {
+    this.setState({ menuMobileVisible: !this.state.menuMobileVisible })
+  }
+
   renderModalProject = () => {
     const { projectModalData, projectModalVisibility } = this.state
     const { Text } = Typography
@@ -138,17 +143,47 @@ class Landing extends Component {
         </Modal>
     )
   }
+
+  menu = () => {
+    const { listMenu } = this.state
+    const { isMobile } = this.props
+    const { Text } = Typography
+    if (isMobile) {
+      return (
+        listMenu.map(item => {
+          return (
+            <Row className="menu-item-mobile">
+              <Text>
+                <Link to={item.key} spy={true} smooth={true} duration={500} offset={-50} onClick={this.menuMobileVisibility}>
+                  {item.value}
+                </Link>
+              </Text>
+            </Row>
+          )
+        })
+      )
+    } else {
+      return (
+        listMenu.map(item => {
+          return (
+            <Text>
+              <Link to={item.key} spy={true} smooth={true} duration={500} offset={-50}>
+                {item.value}
+              </Link>
+            </Text>
+          )
+        })
+      )
+    }
+  }
   
   render() {
-    const { education, skill, experience, project, otherapp, isLoading, dataLoaded, listMenu } = this.state
+    const { education, skill, experience, project, otherapp, isLoading, dataLoaded, menuMobileVisible } = this.state
     const { isMobile, logo } = this.props
     const { Title, Text } = Typography
     if (isLoading) {
       return (
-        <Animate
-          transitionName="fade"
-          transitionAppear
-        >
+        <Animate transitionName="fade" transitionAppear>
           <Row key="1" justify="space-around" align="middle" style={{ height: '92vh' }}>
             <Col>
               <Row>
@@ -163,24 +198,16 @@ class Landing extends Component {
       )
     } else {
       return (
-        <Animate
-          transitionName="fade"
-          transitionAppear
-        >
+        <Animate transitionName="fade" transitionAppear>
           <Row key="2">
             <img className="logo" src={logo} alt="logo" />
+            <Row className="list-menu-mobile">
+              <Popover className="list-menu-mobile" style={ !isMobile ? { display: 'none' } : {} } placement="bottomRight" content={this.menu} trigger="click" visible={menuMobileVisible} onClick={this.menuMobileVisibility}>
+                <MenuOutlined />
+              </Popover>
+            </Row>
             <Row className="list-menu" style={ isMobile ? { display: 'none' } : {} }>
-              {
-                listMenu.map(item => {
-                  return (
-                    <Text>
-                      <Link to={item.key} spy={true} smooth={true} duration={500} offset={-50}>
-                        {item.value}
-                      </Link>
-                    </Text>
-                  )
-                })
-              }
+              { this.menu() }
             </Row>
             <img className="banner-img" src={Banner} alt="banner" />
             <Row className={ isMobile ? "banner-text-mobile" : "banner-text" }>
@@ -217,7 +244,7 @@ class Landing extends Component {
                     otherapp.show ? <OtherApp data={otherapp} isMobile={isMobile} /> : null
                   }
                 </Row>
-                <Contact />
+                <Contact isMobile={isMobile} />
               </>
               :
               <Row style={{ margin: `0 ${ isMobile ? '3%' : '20%'}`, width: isMobile ? '94%' : '100%' }}>

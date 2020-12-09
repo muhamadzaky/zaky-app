@@ -39,7 +39,7 @@ class App extends Component {
             <Route exact path={uriByENV(env)} render={props => <Landing {...props} isMobile={isMobile} logo={logo} />} />
           </Router>
         </Content>
-        <Footer style={{ background: 'white', textAlign: isMobile ? 'center' : 'left' }}>
+        <Footer style={{ background: 'white', textAlign: isMobile ? 'center' : 'left', fontSize: isMobile ? 12 : 14 }}>
           &copy;{ moment(new Date()).format('YYYY') } - Developed with <HeartFilled style={{ color: '#ea4c89' }} /> by Muhamad Zaky
         </Footer>
       </Layout>

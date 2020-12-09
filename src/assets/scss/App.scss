@@ -54,6 +54,15 @@
   font-family: 'Kosugi Maru', sans-serif;
 }
 
+.menu-mobile {
+  position: absolute;
+  color: white;
+  right: 0;
+  top: 0;
+  padding: 20px;
+  font-size: 25px;
+}
+
 .banner-img {
   height: 100%;
   width: 100%;
@@ -190,6 +199,28 @@
   .ant-typography > a:hover {
     color: #c7c7c7;
     padding: 0px 20px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+}
+
+.list-menu-mobile {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  color: #f0f2f5;
+  font-size: 25px;
+}
+
+.ant-popover-inner-content {
+  .ant-row.menu-item-mobile > .ant-typography > a {
+    color: #ea4c89;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .ant-row.menu-item-mobile > .ant-typography > a:hover {
+    color: #e76798;
     font-weight: 600;
     font-size: 15px;
   }
