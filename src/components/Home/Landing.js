@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BackTop, Button, Col, message, Modal, Row, Space, Typography } from 'antd'
 import { DownloadOutlined, MailOutlined } from '@ant-design/icons'
+import { Link } from 'react-scroll'
 import { Section1 } from './Section1'
 import { Section2 } from './Section2'
 import { Section3 } from './Section3'
@@ -13,7 +14,6 @@ import Animate from 'rc-animate'
 import logoReact from '../../assets/image/logo.svg'
 import Banner from '../../assets/image/banner-1.jpg'
 import moment from 'moment'
-import { Link } from 'react-scroll'
 
 class Landing extends Component {
   state = {
@@ -26,7 +26,33 @@ class Landing extends Component {
     project: [],
     otherapp: [],
     projectModalData: {},
-    projectModalVisibility: false
+    projectModalVisibility: false,
+    listMenu: [
+      {
+        key: "About-Section",
+        value: "About"
+      },
+      {
+        key: "Education-Section",
+        value: "Education"
+      },
+      {
+        key: "Skill-Section",
+        value: "Skill"
+      },
+      {
+        key: "Experiences-Section",
+        value: "Experience"
+      },
+      {
+        key: "Projects-Section",
+        value: "Project"
+      },
+      {
+        key: "Contact-Section",
+        value: "Contact"
+      },
+    ]
   }
 
   componentWillMount() {
@@ -114,7 +140,7 @@ class Landing extends Component {
   }
   
   render() {
-    const { education, skill, experience, project, otherapp, isLoading, dataLoaded } = this.state
+    const { education, skill, experience, project, otherapp, isLoading, dataLoaded, listMenu } = this.state
     const { isMobile, logo } = this.props
     const { Title, Text } = Typography
     if (isLoading) {
@@ -144,12 +170,17 @@ class Landing extends Component {
           <Row key="2">
             <img className="logo" src={logo} alt="logo" />
             <Row className="list-menu" style={ isMobile ? { display: 'none' } : {} }>
-              <Text><Link to="About-Section" spy={true} smooth={true} duration={500} offset={-50}>About</Link></Text>
-              <Text><Link to="Education-Section" spy={true} smooth={true} duration={500} offset={-50}>Educations</Link></Text>
-              <Text><Link to="Skill-Section" spy={true} smooth={true} duration={500} offset={-50}>Skills</Link></Text>
-              <Text><Link to="Experiences-Section" spy={true} smooth={true} duration={500} offset={-50}>Experiences</Link></Text>
-              <Text><Link to="Projects-Section" spy={true} smooth={true} duration={500} offset={-50}>Projects</Link></Text>
-              <Text><Link to="Contact-Section" spy={true} smooth={true} duration={500} offset={-50}>Contact</Link></Text>
+              {
+                listMenu.map(item => {
+                  return (
+                    <Text>
+                      <Link to={item.key} spy={true} smooth={true} duration={500} offset={-50}>
+                        {item.value}
+                      </Link>
+                    </Text>
+                  )
+                })
+              }
             </Row>
             <img className="banner-img" src={Banner} alt="banner" />
             <Row className={ isMobile ? "banner-text-mobile" : "banner-text" }>
