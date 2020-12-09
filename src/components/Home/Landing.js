@@ -145,8 +145,8 @@ class Landing extends Component {
             <img className="logo" src={logo} alt="logo" />
             <Row className="list-menu" style={ isMobile ? { display: 'none' } : {} }>
               <Text><Link to="About-Section" spy={true} smooth={true} duration={500} offset={-50}>About</Link></Text>
-              <Text><Link to="Education-Section" spy={true} smooth={true} duration={500} offset={-50}>Education</Link></Text>
-              <Text><Link to="Skill-Section" spy={true} smooth={true} duration={500} offset={-50}>Skill</Link></Text>
+              <Text><Link to="Education-Section" spy={true} smooth={true} duration={500} offset={-50}>Educations</Link></Text>
+              <Text><Link to="Skill-Section" spy={true} smooth={true} duration={500} offset={-50}>Skills</Link></Text>
               <Text><Link to="Experiences-Section" spy={true} smooth={true} duration={500} offset={-50}>Experiences</Link></Text>
               <Text><Link to="Projects-Section" spy={true} smooth={true} duration={500} offset={-50}>Projects</Link></Text>
               <Text><Link to="Contact-Section" spy={true} smooth={true} duration={500} offset={-50}>Contact</Link></Text>
