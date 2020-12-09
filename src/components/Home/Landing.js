@@ -201,8 +201,8 @@ class Landing extends Component {
         <Animate transitionName="fade" transitionAppear>
           <Row key="2">
             <img className="logo" src={logo} alt="logo" />
-            <Row className="list-menu-mobile">
-              <Popover className="list-menu-mobile" style={ !isMobile ? { display: 'none' } : {} } placement="bottomRight" content={this.menu} trigger="click" visible={menuMobileVisible} onClick={this.menuMobileVisibility}>
+            <Row className="list-menu-mobile" style={ !isMobile ? { display: 'none' } : {} }>
+              <Popover className="list-menu-mobile" placement="bottomRight" content={this.menu} trigger="click" visible={menuMobileVisible} onClick={this.menuMobileVisibility}>
                 <MenuOutlined />
               </Popover>
             </Row>
