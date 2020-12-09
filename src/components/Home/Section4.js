@@ -19,7 +19,7 @@ export const Section4 = (opt) => {
             {
               opt.data.map((item, idx) => {
                 return (
-                  <Item key={ idx } label={`${ item.position } - ${ item.company }`}>{`${moment(item.start).format("ll")} - ${moment(item.end).format("ll")}`}</Item>
+                  <Item key={ idx } label={`${ item.position } - ${ item.company }`}>{`${moment(item.start).format("ll")} - ${item.end ? moment(item.end).format("ll") : "Present"}`}</Item>
                 )
               })
             }

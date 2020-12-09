@@ -91,12 +91,20 @@ class Landing extends Component {
             </Col>
           </Row>
           <Row style={{ marginTop: 20 }}>
-            <Col>
+            <Col span={12}>
               <Row>
                 <label>Company</label>
               </Row>
               <Row>
                 <Text className="description-value" strong>{ item.company }</Text>
+              </Row>
+            </Col>
+            <Col span={12}>
+              <Row>
+                <label>Position</label>
+              </Row>
+              <Row>
+                <Text className="description-value" strong>{ item.jobdesk }</Text>
               </Row>
             </Col>
           </Row>

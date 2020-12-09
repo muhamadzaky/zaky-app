@@ -20,7 +20,7 @@ export const Section5 = (opt) => {
             renderItem={item => (
               <Item>
                 <Card 
-                  title={<Tooltip title={ item.company }>{ item.company }</Tooltip>}
+                  title={<Tooltip title={ item.company }><Text strong>{ item.company }</Text></Tooltip>}
                   style={{ width: opt.isMobile ? '100%' : '350px' }}
                   extra={<Button type="primary" shape="round" size="small" onClick={ () => opt.openModal(item) }>More</Button>}
                   hoverable
@@ -43,6 +43,16 @@ export const Section5 = (opt) => {
                       </Row>
                       <Row>
                         <Text className="description-value" strong>{ `${item.start} - ${item.end ? item.end : 'Present'}` }</Text>
+                      </Row>
+                    </Col>
+                  </Row>
+                  <Row style={{ marginTop: 20 }}>
+                    <Col>
+                      <Row>
+                        <label>Position</label>
+                      </Row>
+                      <Row>
+                        <Text className="description-value" strong>{ item.jobdesk }</Text>
                       </Row>
                     </Col>
                   </Row>
