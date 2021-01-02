@@ -221,7 +221,7 @@ class Landing extends Component {
                 </Row>
                 <Row style={ isMobile ? { marginTop: 30, background: 'white', padding: '10px 10px', borderTopLeftRadius: 35, borderBottomLeftRadius: 35 } : { marginTop: 10 }}>
                   <Space className="btn-banner" size="large">
-                    <Button className="btn-pink" shape="round" icon={<MailOutlined />} href="mailto:muhamadzaky2310@gmail.com?cc=zakysteinfeld@outlook.com&subject=Hi! I'm interested with you.&body=" target="_blank" size="large">
+                    <Button className="btn-pink" shape="round" icon={<MailOutlined />} href="mailto:muhamadzaky1023@gmail.com?cc=zakysteinfeld@outlook.com&subject=Hi! I'm interested with you.&body=" target="_blank" size="large">
                       Mail me!
                     </Button>
                     <Button className="btn-green" shape="round" icon={<DownloadOutlined />} href="https://drive.google.com/drive/folders/1IQ0Vc28mkXClsFYPOrKhhfCP6rPn7o2-?usp=sharing" target="_blank" size="large">
