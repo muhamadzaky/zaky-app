@@ -45,13 +45,13 @@ export const Section3 = (opt) => {
         </>
         :
         <>
-          <Col span={2}>
+          <Col span={3}>
             <Title>
               Skill
               <Divider type="vertical" style={{ margin: 0, marginTop: '5px', borderTop: '1px solid blue' }} />
             </Title>
           </Col>
-          <Col span={22}>
+          <Col span={21}>
             { renderList(opt) }
           </Col>
         </>

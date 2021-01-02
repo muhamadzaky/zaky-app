@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BackTop, Button, Col, message, Modal, Popover, Row, Space, Typography } from 'antd'
+import { BackTop, Button, Col, message, Modal, Popover, Row, Space, Tag, Typography } from 'antd'
 import { DownloadOutlined, MailOutlined, MenuOutlined } from '@ant-design/icons'
 import { Link } from 'react-scroll'
 import { Section1 } from './Section1'
@@ -137,6 +137,22 @@ class Landing extends Component {
               </Row>
               <Row>
                 <Text className="description-value" strong>{ item.jobdesk }</Text>
+              </Row>
+            </Col>
+          </Row>
+          <Row style={{ marginTop: 20 }}>
+            <Col>
+              <Row>
+                <label>Tags</label>
+              </Row>
+              <Row>
+                {
+                  item.tech ? item.tech.map(item => {
+                    return (
+                      <Tag>{item}</Tag>
+                    )
+                  }) : null
+                }
               </Row>
             </Col>
           </Row>
