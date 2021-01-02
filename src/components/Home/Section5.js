@@ -21,7 +21,7 @@ export const Section5 = (opt) => {
               <Item>
                 <Card 
                   title={<Tooltip title={ item.company }><Text strong>{ item.company }</Text></Tooltip>}
-                  style={{ width: opt.isMobile ? '100%' : '350px' }}
+                  style={{ width: '100%' }}
                   extra={<Button type="primary" shape="round" size="small" onClick={ () => opt.openModal(item) }>More</Button>}
                   hoverable
                   bordered={false}

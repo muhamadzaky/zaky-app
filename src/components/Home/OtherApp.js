@@ -14,7 +14,7 @@ export const OtherApp = (opt) => {
         </Row>
         <Row justify="space-around">
           <Radio.Group>
-            { opt.data.list.map((item, idx) => { return ( <Button key={idx} href={item.link} target={item.target} htmlType="button">{item.app}</Button> ) }) }
+            { opt.data.list.map((item, idx) => { return ( <Button type="primary" key={idx} href={item.link} target={item.target} htmlType="button">{item.app}</Button> ) }) }
           </Radio.Group>
         </Row>
       </Col>
