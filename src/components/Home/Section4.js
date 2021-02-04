@@ -23,7 +23,7 @@ export const Section4 = (opt) => {
                     <Item key={ idx }>
                       <Text style={{ fontSize: 20 }} strong>
                         { item.position }
-                        <Divider style={{ margin: 0, margin: '5px 0' }} />
+                        <Divider style={{ margin: '5px 0' }} />
                       </Text>
                       <Text style={{ fontSize: 18 }} strong>
                         { item.company }

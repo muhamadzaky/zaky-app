@@ -1,11 +1,13 @@
 import React from 'react'
-import { Button, Col, Divider, Radio, Row, Typography } from 'antd'
+import { Avatar, Button, Card, Col, Divider, List, Radio, Row, Typography } from 'antd'
 
 export const OtherApp = (opt) => {
   const { Title } = Typography
+  const { Meta } = Card
+  const { Item } = List
   return (
     <Row justify="space-around" style={{ width: '100%', marginTop: '100px' }}>
-      <Col>
+      <Col style={{ width: '100%' }}>
         <Row justify="space-around">
           <Title>
             Other App
@@ -13,9 +15,28 @@ export const OtherApp = (opt) => {
           </Title>
         </Row>
         <Row justify="space-around">
-          <Radio.Group>
-            { opt.data.list.map((item, idx) => { return ( <Button type="primary" key={idx} href={item.link} target={item.target} htmlType="button">{item.app}</Button> ) }) }
-          </Radio.Group>
+          <List
+            grid={{ gutter: 16, column: opt.isMobile ? 1 : 3 }}
+            dataSource={opt.data.list}
+            style={{ width: '100%' }}
+            renderItem={item => {
+              const avatarname = () => {
+                const array = item.app.split(" ")
+                return array.map(([v]) => v)
+              }
+              return (
+                <Item>
+                  <Card style={{ width: '100%' }} onClick={ () => window.open(item.link, '_blank') } hoverable>
+                    <Meta
+                      avatar={<Row justify="space-around" align="middle"><Avatar size="large">{avatarname()}</Avatar></Row>}
+                      title={item.app}
+                      description={item.desc}
+                    />
+                  </Card>
+                </Item>
+              )
+            }}
+          />
         </Row>
       </Col>
     </Row>

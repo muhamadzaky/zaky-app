@@ -170,7 +170,7 @@ class Landing extends Component {
           return (
             <Row className="menu-item-mobile">
               <Text>
-                <Link to={item.key} spy={true} smooth="easeInOutQuad" duration={1000} offset={-50} onClick={this.menuMobileVisibility}>
+                <Link to={item.key} spy={true} smooth="easeInOutQuad" duration={500} offset={-50} onClick={this.menuMobileVisibility}>
                   {item.value}
                 </Link>
               </Text>
@@ -183,7 +183,7 @@ class Landing extends Component {
         listMenu.map(item => {
           return (
             <Text>
-              <Link to={item.key} spy={true} smooth="easeInOutQuad" duration={1000} offset={-50}>
+              <Link to={item.key} spy={true} smooth="easeInOutQuad" duration={500} offset={-50}>
                 {item.value}
               </Link>
             </Text>
