@@ -161,9 +161,10 @@ class Landing extends Component {
   }
 
   menu = () => {
-    const { listMenu } = this.state
+    let { listMenu, otherapp, dataLoaded } = this.state
     const { isMobile } = this.props
     const { Text } = Typography
+    // if (otherapp.show && dataLoaded) listMenu.splice(5, 0, { key: "OtherApp-Section", value: "Other App" })
     if (isMobile) {
       return (
         listMenu.map(item => {
@@ -226,7 +227,7 @@ class Landing extends Component {
               { this.menu() }
             </Row>
             <img className="banner-img" src={Banner} alt="banner" />
-            <Row className={ isMobile ? "banner-text-mobile" : "banner-text" }>
+            <Row className={ isMobile ? "banner-text-mobile" : "banner-text" } justify={ isMobile && "space-around" }>
               <Row>
                 <p className="hello">Hi!</p>&nbsp;
                 <p className="name">I'm Zaky.</p>
@@ -234,7 +235,7 @@ class Landing extends Component {
               <Row>
                 <p className="position">Frontend Developer</p>
               </Row>
-              <Row style={ isMobile ? { marginTop: 50, background: 'white', padding: '10px 10px', borderRadius: 35 } : { marginTop: 10 }}>
+              <Row style={ isMobile ? { marginTop: '1.2rem', background: 'white', padding: '10px 10px', borderRadius: 35, boxShadow: 'rgb(49 53 59 / 24%) 0px 1px 24px 0px' } : { marginTop: 10 }}>
                 <Space className="btn-banner" size="large">
                   <Button className="btn-pink" shape="round" icon={<MailOutlined />} href="mailto:muhamadzaky1023@gmail.com?cc=zakysteinfeld@outlook.com&subject=Hi! I'm interested with you.&body=" target="_blank" size="large">
                     Mail me!

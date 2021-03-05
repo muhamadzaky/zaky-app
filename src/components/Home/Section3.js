@@ -1,16 +1,16 @@
 import React from 'react'
-import { Card, Divider, Row, List, Typography, Col, Avatar } from 'antd'
+import { Card, Divider, Row, List, Typography, Col, Avatar, Popover } from 'antd'
 
 const renderList = (opt) => {
   const { Item } = List
   return (
     <List
-      grid={{ gutter: 16, column: opt.isMobile ? 1 : 5 }}
+      grid={{ gutter: 16, column: opt.isMobile ? 2 : 5 }}
       dataSource={opt.data}
       renderItem={item => (
         <Item>
           <Card 
-            title={item.title}
+            title={opt.isMobile ? <Popover content={item.title} trigger="hover">{item.title}</Popover> : item.title}
             extra={<Avatar src={ item.logo } />}
             bordered={false}
             bodyStyle={{ display: 'none' }}
