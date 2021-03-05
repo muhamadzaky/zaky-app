@@ -14,7 +14,7 @@ export const Section1 = () => {
         </Row>
         <Row style={{ margin: '10px 0 40px' }}>
           <Paragraph style={{ textAlign: 'justify', fontSize: '18px' }}>
-            Hello! My name is <b>Muhamad Zaky</b>. I'm currently <b>Frontend Developer</b> using <b>ReactJS</b> and .NET on the back.
+            Hello! My name is <b>Muhamad Zaky</b>. I'm currently <b>Frontend Developer</b> using <b>ReactJS</b>.
           </Paragraph>
         </Row>
       </Col>
