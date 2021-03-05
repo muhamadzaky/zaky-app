@@ -1,5 +1,5 @@
 import React from 'react'
-import { Avatar, Button, Card, Col, Divider, List, Radio, Row, Typography } from 'antd'
+import { Avatar, Card, Col, Divider, List, Row, Typography } from 'antd'
 
 export const OtherApp = (opt) => {
   const { Title } = Typography

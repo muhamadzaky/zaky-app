@@ -5,7 +5,7 @@ const renderList = (opt) => {
   const { Item } = List
   return (
     <List
-      grid={{ gutter: 16, column: opt.isMobile ? 1 : 4 }}
+      grid={{ gutter: 16, column: opt.isMobile ? 1 : 5 }}
       dataSource={opt.data}
       renderItem={item => (
         <Item>
@@ -13,9 +13,8 @@ const renderList = (opt) => {
             title={item.title}
             extra={<Avatar src={ item.logo } />}
             bordered={false}
-          >
-            { `${item.progress}%` }
-          </Card>
+            bodyStyle={{ display: 'none' }}
+          />
         </Item>
       )}
     />

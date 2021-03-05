@@ -217,35 +217,33 @@ class Landing extends Component {
         <Animate transitionName="fade" transitionAppear>
           <Row key="2">
             <img className="logo" src={logo} alt="logo" />
-            <Row className="list-menu-mobile" style={ !isMobile ? { display: 'none' } : {} }>
+            <Row className="list-menu-mobile" style={ !isMobile && { display: 'none' } }>
               <Popover className="list-menu-mobile" placement="bottomRight" content={this.menu} trigger="click" visible={menuMobileVisible} onClick={this.menuMobileVisibility}>
                 <MenuOutlined />
               </Popover>
             </Row>
-            <Row className="list-menu" style={ isMobile ? { display: 'none' } : {} }>
+            <Row className="list-menu" style={ isMobile && { display: 'none' } }>
               { this.menu() }
             </Row>
             <img className="banner-img" src={Banner} alt="banner" />
             <Row className={ isMobile ? "banner-text-mobile" : "banner-text" }>
-              <Col>
-                <Row>
-                  <p className="hello">Hi!</p>&nbsp;
-                  <p className="name">I'm Zaky.</p>
-                </Row>
-                <Row>
-                  <p className="position">Frontend & Backend Developer</p>
-                </Row>
-                <Row style={ isMobile ? { marginTop: 30, background: 'white', padding: '10px 10px', borderTopLeftRadius: 35, borderBottomLeftRadius: 35 } : { marginTop: 10 }}>
-                  <Space className="btn-banner" size="large">
-                    <Button className="btn-pink" shape="round" icon={<MailOutlined />} href="mailto:muhamadzaky1023@gmail.com?cc=zakysteinfeld@outlook.com&subject=Hi! I'm interested with you.&body=" target="_blank" size="large">
-                      Mail me!
-                    </Button>
-                    <Button className="btn-green" shape="round" icon={<DownloadOutlined />} href="https://drive.google.com/drive/folders/1IQ0Vc28mkXClsFYPOrKhhfCP6rPn7o2-?usp=sharing" target="_blank" size="large">
-                      Download CV
-                    </Button>
-                  </Space>
-                </Row>
-              </Col>
+              <Row>
+                <p className="hello">Hi!</p>&nbsp;
+                <p className="name">I'm Zaky.</p>
+              </Row>
+              <Row>
+                <p className="position">Frontend Developer</p>
+              </Row>
+              <Row style={ isMobile ? { marginTop: 50, background: 'white', padding: '10px 10px', borderRadius: 35 } : { marginTop: 10 }}>
+                <Space className="btn-banner" size="large">
+                  <Button className="btn-pink" shape="round" icon={<MailOutlined />} href="mailto:muhamadzaky1023@gmail.com?cc=zakysteinfeld@outlook.com&subject=Hi! I'm interested with you.&body=" target="_blank" size="large">
+                    Mail me!
+                  </Button>
+                  <Button className="btn-green" shape="round" icon={<DownloadOutlined />} href="https://drive.google.com/drive/folders/1IQ0Vc28mkXClsFYPOrKhhfCP6rPn7o2-?usp=sharing" target="_blank" size="large">
+                    Download CV
+                  </Button>
+                </Space>
+              </Row>
             </Row>
             {
               dataLoaded ?
@@ -257,7 +255,7 @@ class Landing extends Component {
                   <Section4 data={experience} isMobile={isMobile} />
                   <Section5 data={project} openModal={this.openModal} closeModal={this.closeModal} isMobile={isMobile} />
                   {
-                    otherapp.show ? <OtherApp data={otherapp} isMobile={isMobile} /> : null
+                    otherapp.show && <OtherApp data={otherapp} isMobile={isMobile} />
                   }
                 </Row>
                 <Contact isMobile={isMobile} />

@@ -13,8 +13,8 @@ export const Section1 = () => {
           </Title>
         </Row>
         <Row style={{ margin: '10px 0 40px' }}>
-          <Paragraph style={{ textAlign: 'justify', fontSize: '16px' }}>
-            Hello! My name is <b>Muhamad Zaky</b>. I'm currently <b>Frontend Developer</b> using ReactJS and .NET on the back.
+          <Paragraph style={{ textAlign: 'justify', fontSize: '18px' }}>
+            Hello! My name is <b>Muhamad Zaky</b>. I'm currently <b>Frontend Developer</b> using <b>ReactJS</b> and .NET on the back.
           </Paragraph>
         </Row>
       </Col>

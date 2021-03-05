@@ -73,24 +73,25 @@
   position: absolute;
   top: 40%;
   left: 50px;
-  font-family: 'Overpass', sans-serif;;
+  font-family: 'Overpass', sans-serif;
+  flex-direction: column !important;
   p {
     margin: 0;
   }
   p.hello {
-    font-size: 30px;
+    font-size: 3rem;
     font-weight: 900;
     text-transform: uppercase;
     color: #ea4c89;
   }
   p.name {
-    font-size: 30px;
+    font-size: 3rem;
     font-weight: 900;
     text-transform: uppercase;
     color: #f0f2f5;
   }
   p.position {
-    font-size: 45px;
+    font-size: 5rem;
     font-weight: 900;
     text-transform: uppercase;
     color: #f0f2f5;
