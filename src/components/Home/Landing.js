@@ -161,10 +161,9 @@ class Landing extends Component {
   }
 
   menu = () => {
-    let { listMenu, otherapp, dataLoaded } = this.state
+    let { listMenu } = this.state
     const { isMobile } = this.props
     const { Text } = Typography
-    // if (otherapp.show && dataLoaded) listMenu.splice(5, 0, { key: "OtherApp-Section", value: "Other App" })
     if (isMobile) {
       return (
         listMenu.map(item => {
@@ -228,12 +227,14 @@ class Landing extends Component {
             </Row>
             <img className="banner-img" src={Banner} alt="banner" />
             <Row className={ isMobile ? "banner-text-mobile" : "banner-text" } justify={ isMobile && "space-around" }>
-              <Row>
-                <p className="hello">Hi!</p>&nbsp;
-                <p className="name">I'm Zaky.</p>
-              </Row>
-              <Row>
-                <p className="position">Frontend Developer</p>
+              <Row justify="space-around" style={{ flexDirection: 'column', textAlign: isMobile && 'center' }}>
+                <Row justify={ isMobile && "center" }>
+                  <p className="hello">Hi!</p>&nbsp;
+                  <p className="name">I'm Zaky.</p>
+                </Row>
+                <Row>
+                  <p className="position">Frontend Developer</p>
+                </Row>
               </Row>
               <Row style={ isMobile ? { marginTop: '1.2rem', background: 'white', padding: '10px 10px', borderRadius: 35, boxShadow: 'rgb(49 53 59 / 24%) 0px 1px 24px 0px' } : { marginTop: 10 }}>
                 <Space className="btn-banner" size="large">
