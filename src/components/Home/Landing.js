@@ -113,7 +113,7 @@ class Landing extends Component {
                 <Text className="description-value" strong>{ item.description }</Text>
               </Row>
             </Col>
-            <Col span={12}>
+            <Col span={10} style={{ marginLeft: 10 }}>
               <Row>
                 <label>Duration</label>
               </Row>
@@ -131,7 +131,7 @@ class Landing extends Component {
                 <Text className="description-value" strong>{ item.company }</Text>
               </Row>
             </Col>
-            <Col span={12}>
+            <Col span={10} style={{ marginLeft: 10 }}>
               <Row>
                 <label>Position</label>
               </Row>
@@ -143,7 +143,7 @@ class Landing extends Component {
           <Row style={{ marginTop: 20 }}>
             <Col>
               <Row>
-                <label>Tags</label>
+                <label>Tech</label>
               </Row>
               <Row>
                 {
