@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/zaky-app/static/css/main.bcd40f15.chunk.css",
-    "main.js": "/zaky-app/static/js/main.0e444c9a.chunk.js",
-    "main.js.map": "/zaky-app/static/js/main.0e444c9a.chunk.js.map",
-    "runtime-main.js": "/zaky-app/static/js/runtime-main.71271e26.js",
-    "runtime-main.js.map": "/zaky-app/static/js/runtime-main.71271e26.js.map",
+    "main.css": "/zaky-app/static/css/main.bdef77f7.chunk.css",
+    "main.js": "/zaky-app/static/js/main.57e97fb6.chunk.js",
+    "main.js.map": "/zaky-app/static/js/main.57e97fb6.chunk.js.map",
+    "runtime-main.js": "/zaky-app/static/js/runtime-main.6b1e5098.js",
+    "runtime-main.js.map": "/zaky-app/static/js/runtime-main.6b1e5098.js.map",
     "static/css/2.fc2db407.chunk.css": "/zaky-app/static/css/2.fc2db407.chunk.css",
-    "static/js/2.6c0e9872.chunk.js": "/zaky-app/static/js/2.6c0e9872.chunk.js",
-    "static/js/2.6c0e9872.chunk.js.map": "/zaky-app/static/js/2.6c0e9872.chunk.js.map",
-    "static/js/3.5aff79ed.chunk.js": "/zaky-app/static/js/3.5aff79ed.chunk.js",
-    "static/js/3.5aff79ed.chunk.js.map": "/zaky-app/static/js/3.5aff79ed.chunk.js.map",
+    "static/js/2.a995e880.chunk.js": "/zaky-app/static/js/2.a995e880.chunk.js",
+    "static/js/2.a995e880.chunk.js.map": "/zaky-app/static/js/2.a995e880.chunk.js.map",
+    "static/js/3.46442046.chunk.js": "/zaky-app/static/js/3.46442046.chunk.js",
+    "static/js/3.46442046.chunk.js.map": "/zaky-app/static/js/3.46442046.chunk.js.map",
     "index.html": "/zaky-app/index.html",
     "static/css/2.fc2db407.chunk.css.map": "/zaky-app/static/css/2.fc2db407.chunk.css.map",
-    "static/css/main.bcd40f15.chunk.css.map": "/zaky-app/static/css/main.bcd40f15.chunk.css.map",
-    "static/js/2.6c0e9872.chunk.js.LICENSE.txt": "/zaky-app/static/js/2.6c0e9872.chunk.js.LICENSE.txt",
+    "static/css/main.bdef77f7.chunk.css.map": "/zaky-app/static/css/main.bdef77f7.chunk.css.map",
+    "static/js/2.a995e880.chunk.js.LICENSE.txt": "/zaky-app/static/js/2.a995e880.chunk.js.LICENSE.txt",
     "static/media/banner-1.d8ee8507.jpg": "/zaky-app/static/media/banner-1.d8ee8507.jpg",
     "static/media/logo.2d27ead7.svg": "/zaky-app/static/media/logo.2d27ead7.svg",
     "static/media/logo.4eba379c.png": "/zaky-app/static/media/logo.4eba379c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.71271e26.js",
+    "static/js/runtime-main.6b1e5098.js",
     "static/css/2.fc2db407.chunk.css",
-    "static/js/2.6c0e9872.chunk.js",
-    "static/css/main.bcd40f15.chunk.css",
-    "static/js/main.0e444c9a.chunk.js"
+    "static/js/2.a995e880.chunk.js",
+    "static/css/main.bdef77f7.chunk.css",
+    "static/js/main.57e97fb6.chunk.js"
   ]
 }
