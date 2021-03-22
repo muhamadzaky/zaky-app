@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BackTop, Button, Col, message, Modal, Popover, Row, Space, Tag, Typography } from 'antd'
-import { DownloadOutlined, MailOutlined, MenuOutlined } from '@ant-design/icons'
+import { ArrowUpOutlined, DownloadOutlined, MailOutlined, MenuOutlined } from '@ant-design/icons'
 import { Link } from 'react-scroll'
 import { Section1 } from './Section1'
 import { Section2 } from './Section2'
@@ -270,7 +270,15 @@ class Landing extends Component {
               </Row>
             }
             { this.renderModalProject() }
-            <BackTop />
+            <BackTop>
+              <div className="backtotop">
+                <ArrowUpOutlined className="arrow" />
+                <div className="a1" />
+                <div className="a2" />
+                <div className="a3" />
+                <div className="a4" />
+              </div>
+            </BackTop>
           </Row>
         </Animate>
       )

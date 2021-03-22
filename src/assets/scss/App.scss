@@ -241,3 +241,49 @@
     font-size: 15px;
   }
 }
+
+.backtotop {
+  background: #0000005c;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  .arrow {
+    color: white;
+    font-size: 20px;
+  }
+  .a1 {
+    position: absolute;
+    height: 5px;
+    width: 28px;
+    bottom: -8px;
+    background: #0000005c;
+    border-radius: 10px;
+  }
+  .a2 {
+    position: absolute;
+    height: 5px;
+    width: 22px;
+    bottom: -16px;
+    background: #0000005c;
+    border-radius: 10px;
+  }
+  .a3 {
+    position: absolute;
+    height: 5px;
+    width: 14px;
+    bottom: -24px;
+    background: #0000005c;
+    border-radius: 10px;
+  }
+  .a4 {
+    position: absolute;
+    height: 5px;
+    width: 6px;
+    bottom: -32px;
+    background: #0000005c;
+    border-radius: 10px;
+  }
+}
