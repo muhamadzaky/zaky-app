@@ -101,7 +101,9 @@
 .banner-text-mobile {
   position: absolute;
   top: 10%;
-  font-family: 'Overpass', sans-serif;;
+  font-family: 'Overpass', sans-serif;
+  flex-direction: column !important;
+  width: 100%;
   
   p {
     margin: 0;

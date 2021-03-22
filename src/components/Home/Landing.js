@@ -197,6 +197,7 @@ class Landing extends Component {
     const { education, skill, experience, project, otherapp, isLoading, dataLoaded, menuMobileVisible } = this.state
     const { isMobile, logo } = this.props
     const { Title, Text } = Typography
+    console.log("log", isMobile);
     if (isLoading) {
       return (
         <Animate transitionName="fade" transitionAppear>
@@ -232,12 +233,12 @@ class Landing extends Component {
                   <p className="hello">Hi!</p>&nbsp;
                   <p className="name">I'm Zaky.</p>
                 </Row>
-                <Row>
+                <Row justify={ isMobile && "center" }>
                   <p className="position">Frontend Developer</p>
                 </Row>
               </Row>
-              <Row style={ isMobile ? { marginTop: '1.2rem', background: 'white', padding: '10px 10px', borderRadius: 35, boxShadow: 'rgb(49 53 59 / 24%) 0px 1px 24px 0px' } : { marginTop: 10 }}>
-                <Space className="btn-banner" size="large">
+              <Row justify={ isMobile && 'center' }>
+                <Space className="btn-banner" style={ isMobile ? { marginTop: '1.2rem', background: 'white', padding: '10px 10px', borderRadius: 35, boxShadow: 'rgb(49 53 59 / 24%) 0px 1px 24px 0px', width: 'fit-content' } : { marginTop: 10 }}>
                   <Button className="btn-pink" shape="round" icon={<MailOutlined />} href="mailto:muhamadzaky1023@gmail.com?cc=zakysteinfeld@outlook.com&subject=Hi! I'm interested with you.&body=" target="_blank" size="large">
                     Mail me!
                   </Button>
