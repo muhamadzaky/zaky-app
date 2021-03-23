@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Card, Col, Divider, List, Row, Tooltip, Typography } from 'antd'
 
-export const Section5 = (opt) => {
+const Section5 = ({ isMobile, data, openModal }) => {
   const { Title, Text } = Typography
   const { Item } = List
   return (
@@ -13,16 +13,16 @@ export const Section5 = (opt) => {
             <Divider style={{ margin: 0, marginTop: '5px', borderTop: '1px solid #1890ff' }} />
           </Title>
         </Row>
-        <Row className={ opt.isMobile ? "list-project" : "" }>
+        <Row className={ isMobile ? "list-project" : "" }>
           <List
-            grid={{ gutter: 16, column: opt.isMobile ? 1 : 3 }}
-            dataSource={opt.data}
+            grid={{ gutter: 16, column: isMobile ? 1 : 3 }}
+            dataSource={data}
             renderItem={item => (
               <Item>
                 <Card 
                   title={<Tooltip title={ item.company }><Text strong>{ item.company }</Text></Tooltip>}
                   style={{ width: '100%' }}
-                  extra={<Button type="primary" shape="round" size="small" onClick={ () => opt.openModal(item) }>More</Button>}
+                  extra={<Button type="primary" shape="round" size="small" onClick={ () => openModal(item) }>More</Button>}
                   hoverable
                   bordered={false}
                 >
@@ -65,3 +65,5 @@ export const Section5 = (opt) => {
     </Row>
   )
 }
+
+export default Section5

@@ -1,8 +1,7 @@
 import { Card, Row, Steps, Typography } from 'antd'
 import React from 'react'
 
-export const Section2 = (opt) => {
-  const { data } = opt
+const Section2 = ({ data }) => {
   const { Title } = Typography
   const { Step } = Steps
   return (
@@ -34,3 +33,5 @@ export const Section2 = (opt) => {
     </Row>
   )
 }
+
+export default Section2

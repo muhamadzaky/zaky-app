@@ -1,32 +1,31 @@
 import React from 'react'
 import { Card, Divider, Row, List, Typography, Col, Avatar, Popover } from 'antd'
 
-const renderList = (opt) => {
-  const { Item } = List
-  return (
-    <List
-      grid={{ gutter: 16, column: opt.isMobile ? 2 : 5 }}
-      dataSource={opt.data}
-      renderItem={item => (
-        <Item>
-          <Card 
-            title={opt.isMobile ? <Popover content={item.title} trigger="hover">{item.title}</Popover> : item.title}
-            extra={<Avatar src={ item.logo } />}
-            bordered={false}
-            bodyStyle={{ display: 'none' }}
-          />
-        </Item>
-      )}
-    />
-  )
-}
-
-export const Section3 = (opt) => {
+const Section3 = ({ isMobile, data }) => {
   const { Title } = Typography
+  const { Item } = List
+  const renderList = () => {
+    return (
+      <List
+        grid={{ gutter: 16, column: isMobile ? 2 : 5 }}
+        dataSource={data}
+        renderItem={item => (
+          <Item>
+            <Card 
+              title={isMobile ? <Popover content={item.title} trigger="hover">{item.title}</Popover> : item.title}
+              extra={<Avatar src={ item.logo } />}
+              bordered={false}
+              bodyStyle={{ display: 'none' }}
+            />
+          </Item>
+        )}
+      />
+    )
+  }
   return (
     <Row className="Skill-Section" justify="space-around" style={{ width: '100%', marginTop: '100px' }}>
       { 
-        opt.isMobile ? 
+        isMobile ? 
         <>
           <Row>
             <Col>
@@ -38,7 +37,7 @@ export const Section3 = (opt) => {
           </Row>
           <Row>
             <Col>
-              { renderList(opt) }
+              { renderList() }
             </Col>
           </Row>
         </>
@@ -51,10 +50,12 @@ export const Section3 = (opt) => {
             </Title>
           </Col>
           <Col span={21}>
-            { renderList(opt) }
+            { renderList() }
           </Col>
         </>
       }
     </Row>
   )
 }
+
+export default Section3

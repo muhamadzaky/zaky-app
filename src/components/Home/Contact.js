@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Col, Divider, List, Row, Tooltip, Typography } from 'antd'
 import { InstagramOutlined, FacebookOutlined, TwitterOutlined, MailOutlined } from '@ant-design/icons'
 
-export const Contact = (opt) => {
+const Contact = ({ isMobile }) => {
   const { Title } = Typography
   const { Item } = List
   const data = [
@@ -37,7 +37,7 @@ export const Contact = (opt) => {
     <Row className="Contact-Section" justify="space-around" style={{ width: '100%', padding: '30px 20% 10px', marginTop: 50, background: 'white' }}>
       <Col>
         <Row justify="space-around">
-          <Title style={ opt.isMobile ? { fontSize: 36 } : {} }>
+          <Title style={ isMobile ? { fontSize: 36 } : {} }>
             Reach Me On
             <Divider style={{ margin: 0, marginTop: '5px', borderTop: '1px solid #1890ff' }} />
           </Title>
@@ -59,3 +59,5 @@ export const Contact = (opt) => {
     </Row>
   )
 }
+
+export default Contact

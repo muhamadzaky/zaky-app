@@ -1,7 +1,7 @@
 import React from 'react'
 import { Avatar, Card, Col, Divider, List, Row, Typography } from 'antd'
 
-export const OtherApp = (opt) => {
+const OtherApp = ({ isMobile, data }) => {
   const { Title } = Typography
   const { Meta } = Card
   const { Item } = List
@@ -16,8 +16,8 @@ export const OtherApp = (opt) => {
         </Row>
         <Row justify="space-around">
           <List
-            grid={{ gutter: 16, column: opt.isMobile ? 1 : 3 }}
-            dataSource={opt.data.list}
+            grid={{ gutter: 16, column: isMobile ? 1 : 3 }}
+            dataSource={data.list}
             style={{ width: '100%' }}
             renderItem={item => {
               const avatarname = () => {
@@ -42,3 +42,5 @@ export const OtherApp = (opt) => {
     </Row>
   )
 }
+
+export default OtherApp

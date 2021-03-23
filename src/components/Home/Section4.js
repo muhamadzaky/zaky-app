@@ -2,7 +2,7 @@ import React from 'react'
 import { Col, Divider, Row, Timeline, Typography } from 'antd'
 import moment from 'moment'
 
-export const Section4 = (opt) => {
+const Section4 = ({ isMobile, data }) => {
   const { Title, Text } = Typography
   const { Item } = Timeline
   return (
@@ -15,10 +15,10 @@ export const Section4 = (opt) => {
           </Title>
         </Row>
         <Row justify="space-around" style={{ marginTop: 20 }}>
-          <Timeline mode={ opt.isMobile ? "left" : "right" } style={{ width: '100%' }}>
+          <Timeline mode={ isMobile ? "left" : "right" } style={{ width: '100%' }}>
             {
-              opt.data.map((item, idx) => {
-                if (opt.isMobile) {
+              data.map((item, idx) => {
+                if (isMobile) {
                   return (
                     <Item key={ idx }>
                       <Text style={{ fontSize: 20 }} strong>
@@ -49,3 +49,5 @@ export const Section4 = (opt) => {
     </Row>
   )
 }
+
+export default Section4

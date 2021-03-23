@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col, Divider, Row, Typography } from 'antd'
 
-export const Section1 = () => {
+const Section1 = () => {
   const { Title, Paragraph } = Typography
   return (
     <Row className="About-Section" justify="space-around" style={{ width: '100%', marginTop: '100px', marginBottom: '50px' }}>
@@ -21,3 +21,5 @@ export const Section1 = () => {
     </Row>
   )
 }
+
+export default Section1
